@@ -8,26 +8,32 @@ export default class QuestionItem extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isVote: false
+            isVote: ''
         }
         this.voteUp = this.voteUp.bind(this)
         this.voteDown = this.voteDown.bind(this)
     }
     voteUp() {
-        if(this.state.isVote) {
-            message.success('您已经投过票了')
+        if(this.state.isVote === 'up') {
+            message.error('您已经点过赞了')
             return 
         }
         let num = this.props.num + 1
         this.props.doVote( num, this.props.id )
         this.setState({
-            isVote: true
+            isVote: 'up'
         })
-
-
-        
     }
     voteDown() {
+        if(this.state.isVote === 'down') {
+            message.error('您已经踩过了')
+            return
+        }
+        let num = this.props.num - 1
+        this.props.doVote( num, this.props.id )
+        this.setState({
+            isVote: 'down'
+        })
 
     }
     render () {
@@ -37,7 +43,7 @@ export default class QuestionItem extends Component {
                     <Col span={2}>
                         <Row>
                             <Col>
-                                <Button onClick={this.voteUp} className='vote-btn up-btn' icon='caret-up'>
+                                <Button onClick={this.voteUp} className='vote-btn up-btn' icon='caret-up' >
                                     <p>{this.props.num}</p>
                                 </Button>
 
