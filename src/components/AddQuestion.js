@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import _ from 'lodash'
-import { Row, Col, Button, Form, Input, Icon } from 'antd'
+import { Row, Col, Button, Form, Input, Icon, message } from 'antd'
 
 import '../style.less'
 const FormItem = Form.Item
@@ -14,14 +14,16 @@ class AddQuestion extends Component {
         e.preventDefault();
         this.props.form.validateFields(( err, values ) => {
             if(!err) {
-               console.log('form-data: ',values)
+            //    console.log('form-data: ',values)
                this.props.newQuestion( values )
+               this.props.form.resetFields()
             }
         })
     }
     handleReset(e) {
         e.preventDefault()
         this.props.form.resetFields()
+        message.success('重置成功')
     }
 
     render () {

@@ -73,6 +73,7 @@ export default class Main extends Component {
         this.setState({
             items: newItem
         })
+        message.success('添加问题成功')
     }
     // 问题排序
     sortQuestion(obj) {

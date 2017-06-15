@@ -23,6 +23,7 @@ export default class QuestionItem extends Component {
         this.setState({
             isVote: 'up'
         })
+        message.success('赞同了一下')
     }
     voteDown() {
         if(this.state.isVote === 'down') {
@@ -34,6 +35,7 @@ export default class QuestionItem extends Component {
         this.setState({
             isVote: 'down'
         })
+        message.success('踩了一下')
 
     }
     render () {
