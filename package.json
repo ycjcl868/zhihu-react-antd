@@ -1,20 +1,20 @@
 {
-  "name": "react-webpack-boilerplate",
+  "name": "zhihu-react-antd",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot --open --colors --inline",
+    "dev": "webpack-dev-server --hot --open --colors --inline --config webpack.config.dev.js",
     "build": "webpack --optimize-minimize -p --colors"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ycjcl868/React-Webpack-boilerplate.git"
+    "url": "git+https://github.com/ycjcl868/zhihu-react-antd.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ycjcl868/React-Webpack-boilerplate/issues"
+    "url": "https://github.com/ycjcl868/zhihu-react-antd/issues"
   },
   "dependencies": {
     "antd": "^2.10.4",
@@ -57,5 +57,5 @@
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },
-  "homepage": "https://github.com/ycjcl868/React-Webpack-boilerplate#readme"
+  "homepage": "https://github.com/ycjcl868/zhihu-react-antd#readme"
 }
