@@ -20,7 +20,10 @@ export default class Main extends Component {
         this.doVote = this.doVote.bind(this)
     }
     componentDidMount() {
-        axios
+        let instance = axios.create({
+            timeout: 2000
+        })
+        instance
             .get('https://easy-mock.com/mock/590a821d7a878d73716eb5c7/example/getAnswer')
             .then(res => {
                 const posts = res.data;

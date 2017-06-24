@@ -1,10 +1,18 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import _ from 'lodash'
 import { Row, Col, Button, message } from 'antd'
 
 import '../style.less'
 
 export default class QuestionItem extends Component {
+    static propTypes = {
+        num: PropTypes.number,
+        id: PropTypes.number,
+        title: PropTypes.string,
+        content: PropTypes.string,
+        doVote: PropTypes.func
+    }
     constructor(props) {
         super(props)
         this.state = {

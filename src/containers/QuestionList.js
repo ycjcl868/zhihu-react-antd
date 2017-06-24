@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import _ from 'lodash'
 import { Row, Col, Button } from 'antd'
 
@@ -6,6 +7,10 @@ import '../style.less'
 import QuestionItem from '../components/QuestionItem'
 
 export default class QuestionList extends Component {
+    static propTypes = {
+        items: PropTypes.arrayOf,
+        doVote: PropTypes.func
+    } 
     constructor(props) {
         super(props)
         this.doVote = this.doVote.bind(this)
@@ -30,4 +35,3 @@ export default class QuestionList extends Component {
         );
     }
 }
-
