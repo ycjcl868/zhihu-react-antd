@@ -5,7 +5,7 @@ module.exports = {
         "browser": true
     },
     "rules": {
-        "indent": ["error", 4],
+        "react/jsx-indent": ["error", 2, {props: 4}],
         "strict": 0,
         "arrow-body-style": ["error", "as-needed"],
         'func-names': 0,
