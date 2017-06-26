@@ -2,11 +2,12 @@ module.exports = {
     "extends": "airbnb",
     "parser": "babel-eslint",
     "env": {
-        "browser": true
+        "browser": true,
+         "es6": true
     },
     "rules": {
-        "react/jsx-indent": ["error", 2, {props: 4}],
         "strict": 0,
+        "class-methods-use-this": "off",
         "arrow-body-style": ["error", "as-needed"],
         'func-names': 0,
         'arrow-body-style': 0,
@@ -26,11 +27,11 @@ module.exports = {
         'jsx-a11y/no-static-element-interactions': 0,
         'jsx-a11y/anchor-has-content': 0,
         'react/no-danger': 0,
-        'comma-dangle': ['error', 'always-multiline'],        
+        'comma-dangle': ['error', 'always-multiline'],
     },
     "settings": {
-        
+
     }
-    
+
 
 };

@@ -13,19 +13,25 @@ module.exports = {
     ],
   output: {
       path: BUILD_PATH,
-      // publicPath: "/build/", 
+      // publicPath: "/build/",
       filename: "bundle.js"
   },
   module: {
-      loaders: [  
-          
+      preLoaders: [
+        {
+          test: /\.(js|jsx)?$/,
+          loader: 'eslint',
+          exclude: /node_modules/
+        }
+      ],
+      loaders: [
           {
-            test: /\.(js|jsx)$/, 
+            test: /\.(js|jsx)$/,
             loader: "react-hot-loader!babel-loader",
             exclude: /node_modules/
-          },  { 
-              test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/, 
-              loader: 'url-loader?limit=100000' 
+          },  {
+              test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+              loader: 'url-loader?limit=100000'
             },{
               test: /(\.less)$/,
                loader: 'style!css!less' //.scss 文件使用 style-loader、css-loader 和 less-loader 来编译处理
@@ -58,8 +64,8 @@ module.exports = {
     new webpack.NoErrorsPlugin(),//用来跳过编译时出错的代码并记录，使编译后运行时的包不会发生错误
     new webpack.HotModuleReplacementPlugin(),//全局开启代码热替换
     new webpack.DefinePlugin({
-        "process.env": { 
-            NODE_ENV: JSON.stringify("production") 
+        "process.env": {
+            NODE_ENV: JSON.stringify("production")
         }
     })
   ]

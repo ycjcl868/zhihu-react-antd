@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --hot --open --colors --inline --config webpack.config.dev.js",
-    "build": "webpack --optimize-minimize -p --colors"
+    "build": "webpack --optimize-minimize -p --colors",
+    "fix": "./node_modules/.bin/eslint ./src/**/*.js --fix"
+
   },
   "repository": {
     "type": "git",
@@ -42,6 +44,7 @@
     "css-loader": "^0.23.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
+    "eslint-loader": "^1.8.0",
     "eslint-plugin-import": "^2.6.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.1.0",
