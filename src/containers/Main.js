@@ -35,14 +35,15 @@ export default class Main extends Component {
             .then((res) => {
                 const posts = res.data;
                 this.setState({
-                    items: Main.sortQuestion(posts),
+                    items: this.sortQuestion(posts),
                 });
+                console.log(this.state);
             })
             .catch(() => {
                 const items = [
                     {
                         id: 1,
-                        title: 'Mock坏了，这是本地加载的数据',
+                        title: 'Mock坏了，这是本地加载的数据data',
                         content: '理性探讨，请勿撕逼。产品经理的主要工作职责是产品设计。接受来自其他部门的需求，经过设计后交付研发。但这里有好些职责不清楚的地方。',
                         num: 120,
                     },
