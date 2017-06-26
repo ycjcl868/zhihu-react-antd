@@ -1,37 +1,29 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import _ from 'lodash'
-import { Row, Col, Button } from 'antd'
+import React, { Component } from 'react';
 
-import '../style.less'
-import QuestionItem from '../components/QuestionItem'
+import '../style.less';
+import QuestionItem from '../components/QuestionItem';
 
 export default class QuestionList extends Component {
-    static propTypes = {
-        items: PropTypes.arrayOf,
-        doVote: PropTypes.func
-    } 
     constructor(props) {
-        super(props)
-        this.doVote = this.doVote.bind(this)
-        console.log(this.props.items)
-    }    
-    doVote(num, id) {
-        this.props.doVote( num, id )
+        super(props);
+        this.doVote = this.doVote.bind(this);
+        console.log(this.props.items);
     }
-    render () {
-
+    doVote(num, id) {
+        this.props.doVote(num, id);
+    }
+    render() {
         return (
-            <div>
-                {this.props.items.map((obj, i) => 
-                    <QuestionItem 
-                            key={i}
-                            doVote={this.doVote}
-                            {...obj}
-                        />
-                   
+          <div>
+            {this.props.items.map((obj, i) =>
+              (<QuestionItem
+                key={i}
+                doVote={this.doVote}
+                {...obj}
+              />)
+
                 )}
-            </div>
+          </div>
         );
     }
 }
